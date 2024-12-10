@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><i>SweetBurger Menu</i></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px;
+            color: darkred;
+        }
+
+        .menu-section, .cart-section {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 15px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .menu-item {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin: 10px 0;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            background: white;
+        }
+
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+
+        .menu-item-details {
+            flex: 1;
+        }
+
+        .menu-item-title {
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+
+        .menu-item-price {
+            color: green;
+            font-weight: bold;
+        }
+
+        .menu-item-description {
+            font-size: 0.9em;
+            color: gray;
+        }
+
+        .menu-item-nutrition {
+            font-size: 0.8em;
+            color: #555;
+        }
+
+        .cart-link, .back-to-menu-link, .submit-order-link {
+            display: block;
+            text-align: center;
+            margin: 20px;
+            text-decoration: none;
+            background-color: darkred;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .cart-link:hover, .back-to-menu-link:hover, .submit-order-link:hover {
+            background-color: red;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+
+        .cart-total {
+            text-align: right;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* Thank You message section */
+        .thank-you-section {
+            display: none;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SweetBurger Menu</h1>
+
+    <!-- Burgers Section -->
+    <div class="menu-section" id="burgers">
+        <h2>Burgers</h2>
+        <div class="menu-item">
+            <img src="Signature_Savory_Classic_Burger.webp" alt="Burger">
+            <div class="menu-item-details">
+                <div class="menu-item-title">Classic Burger</div>
+                <div class="menu-item-price">$8.99</div>
+                <div class="menu-item-description">A juicy classic beef burger topped with fresh lettuce, tomato, and onion.</div>
+                <div class="menu-item-nutrition">Calories: 550 | Protein: 25g | Fat: 30g</div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="crispy-comte-cheesburgers-FT-RECIPE0921-6166c6552b7148e8a8561f7765ddf20b.jpg" alt="Cheese Burger">
+            <div class="menu-item-details">
+                <div class="menu-item-title">Cheese Burger</div>
+                <div class="menu-item-price">$9.99</div>
+                <div class="menu-item-description">A classic burger with melted cheese, lettuce, and tomato.</div>
+                <div class="menu-item-nutrition">Calories: 600 | Protein: 28g | Fat: 32g</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sides Section -->
+    <div class="menu-section" id="sides">
+        <h2>Sides</h2>
+        <div class="menu-item">
+            <img src="Crispy-Fries_8.webp" alt="Fries">
+            <div class="menu-item-details">
+                <div class="menu-item-title">French Fries</div>
+                <div class="menu-item-price">$3.99</div>
+                <div class="menu-item-description">Crispy golden fries, lightly salted.</div>
+                <div class="menu-item-nutrition">Calories: 300 | Fat: 15g</div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="ejm-sourdough-03-superJumbo.jpg" alt="Onion Rings">
+            <div class="menu-item-details">
+                <div class="menu-item-title">Onion Rings</div>
+                <div class="menu-item-price">$4.49</div>
+                <div class="menu-item-description">Golden fried onion rings served with a side of ranch.</div>
+                <div class="menu-item-nutrition">Calories: 400 | Fat: 20g</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Beverages Section -->
+    <div class="menu-section" id="beverages">
+        <h2>Beverages</h2>
+        <div class="menu-item">
+            <img src="Great-Value-Low-Sodium-Club-Soda-Sparkling-Water-33-8-fl-oz-1-Bottle_b97c184f-552c-456b-bad8-6756ff7b625c.3af034315a0b285100e49e16373feed9.webp" alt="Soda">
+            <div class="menu-item-details">
+                <div class="menu-item-title">Soda</div>
+                <div class="menu-item-price">$1.99</div>
+                <div class="menu-item-description">Refreshing carbonated beverage, various flavors available.</div>
+                <div class="menu-item-nutrition">Calories: 150</div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="StrawberryOreoMilkshake-blog-7.jpg" alt="Milkshake">
+            <div class="menu-item-details">
+                <div class="menu-item-title">Milkshake</div>
+                <div class="menu-item-price">$4.99</div>
+                <div class="menu-item-description">Thick, creamy milkshake in chocolate, vanilla, or strawberry.</div>
+                <div class="menu-item-nutrition">Calories: 400 | Protein: 8g</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desserts Section -->
+    <div class="menu-section" id="desserts">
+        <h2>Desserts</h2>
+        <div class="menu-item">
+            <img src="images.jpg" alt="Ice Cream">
+            <div class="menu-item-details">
+                <div class="menu-item-title">Ice Cream</div>
+                <div class="menu-item-price">$3.99</div>
+                <div class="menu-item-description">Creamy ice cream in a variety of flavors.</div>
+                <div class="menu-item-nutrition">Calories: 200</div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="AR-9599-Quick-Easy-Brownies-ddmfs-2x1-4d80254e23f647d18c596d8f8bb614ce.jpg" alt="Brownie">
+            <div class="menu-item-details">
+                <div class="menu-item-title">Chocolate Brownie</div>
+                <div class="menu-item-price">$2.99</div>
+                <div class="menu-item-description">Rich, fudgy brownie with a gooey chocolate center.</div>
+                <div class="menu-item-nutrition">Calories: 250</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart -->
+    <div class="cart-section" id="cart">
+        <h2>Your Shopping Cart</h2>
+        <div class="cart-item">
+            <span>Classic Burger</span>
+            <span>$8.99</span>
+        </div>
+        <div class="cart-item">
+            <span>French Fries</span>
+            <span>$3.99</span>
+        </div>
+        <div class="cart-total">Total: $12.98</div>
+        <a href="#burgers" class="back-to-menu-link">Back to Menu</a>
+        <a href="#thank-you" class="submit-order-link">Submit Order</a>
+    </div>
+
+    <!-- Thank You Message Section -->
+    <div class="thank-you-section" id="thank-you">
+        <h2>Thank you for your order!</h2>
+        <p>Your order has been received and is being processed. Enjoy your meal!</p>
+        <a href="#cart" class="back-to-menu-link">Back to Cart</a>
+    </div>
+</body>
+</html>
